@@ -1,0 +1,14 @@
+{
+  "name": "heroku-buildpack-static",
+  "description": "LINE LIFF Vue3 template",
+  "repository": "https://github.com/louis70109/announcer-vue",
+  "keywords": ["LINE", "vue", "static"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static.git"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
