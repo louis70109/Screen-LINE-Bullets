@@ -9,7 +9,7 @@ export default {
   setup() {
     let data = ref([]),
       count = ref(0),
-      ws = new WebSocket('wss://0ce8ac4c18c4.ap.ngrok.io');
+      ws = new WebSocket(process.env.VUE_APP_WEBSOCKET_URL);
 
     onMounted(async () => {
       ws.onopen = () => {
@@ -17,9 +17,8 @@ export default {
       };
 
       ws.onmessage = (event) => {
-        console.log(event);
         const bullet = JSON.parse(event.data);
-        createText(bullet.text, bullet.avatar);
+        if (bullet.text !== '') createText(bullet.text, bullet.avatar);
       };
     });
     onUnmounted(() => {
@@ -52,7 +51,7 @@ export default {
         document.body.appendChild(div_text);
       }
       await gsap.to('#' + div_text.id, {
-        duration: 8,
+        duration: 5,
         x: -1 * (document.documentElement.clientWidth + div_text.clientWidth),
       });
 
