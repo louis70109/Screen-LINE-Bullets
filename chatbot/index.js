@@ -20,12 +20,33 @@ async function handleEvent(event) {
   }
 
   const user = await client.getProfile(event.source.userId);
-  BULLETS = await event.message.text;
-  USER_AVATAR = await user.pictureUrl;
-  console.log(BULLETS);
-  console.log(USER_AVATAR);
+  const context = await event.message.text,
+    quickReplyList = ['😆😆😆', '😊😊😊', '我我我我我我', '😂😂😂', '😍😍😍'];
+  let message = '請按下方按鈕';
+  let items = quickReplyList.map((el) => {
+    return {
+      type: 'action',
+      action: {
+        type: 'message',
+        label: el,
+        text: el,
+      },
+    };
+  });
+  if (quickReplyList.indexOf(context) === -1) {
+    BULLETS = '';
+    USER_AVATAR = '';
+  } else {
+    BULLETS = context;
+    USER_AVATAR = await user.pictureUrl;
+    message = '已發送';
+  }
 
-  const echo = { type: 'text', text: event.message.text };
+  const echo = {
+    type: 'text',
+    text: message,
+    quickReply: { items },
+  };
 
   return client.replyMessage(event.replyToken, echo);
 }
