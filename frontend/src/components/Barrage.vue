@@ -51,11 +51,10 @@ export default {
         document.body.appendChild(div_text);
       }
       await gsap.to('#' + div_text.id, {
-        duration: 5,
+        duration: 8,
         x: -1 * (document.documentElement.clientWidth + div_text.clientWidth),
       });
-
-      div_text.parentNode.removeChild(div_text);
+      if (div_text.hasChildNodes()) div_text.parentNode.removeChild(div_text);
     }
     return { count, data };
   },
