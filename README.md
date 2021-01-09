@@ -30,7 +30,7 @@ npm run dev
     - Enable `Use webhook` checkbox.
     - Verify your webhook.
 
-![](https://github.com/louis70109/Screen-LINE-Bullets/LINE-bot-step.jpg)
+![](https://github.com/louis70109/Screen-LINE-Bullets/blob/master/LINE-bot-step.jpg)
 
 - You will get following info, need to fill back in `.env` file at `chatbot` folder.
 
