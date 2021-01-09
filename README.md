@@ -2,14 +2,19 @@
 
 You can use it on streaming platform(e.g. Twitch, Youtube...) by OBS.(If you don't know how to use, you could reference [the article](https://nijialin.com/2020/11/29/mac-stream-soundflower/)). It would be cool for your activities!
 
+## Developing
 
-## Details
+You need to run `npm install` to import dependencies and run `npm run dev` to start servers both of **chatbot** and **frontend** folder.
 
-- LINE Chatbot
-  - Avatar is from `getProfile` Bot API
-  - Get messages from `Webhook event` and send messages by `Websocket`
-- Frontend
-    - use `setInterval` to schedule receive messages.
+Because LINE Chatbot need `SSL` certificate, so you can deploy `chatbot` code to **Heroku** or run [ngrok](https://ngrok.com/) to get a domain which is contain SSL.
+
+# Chatbot
+
+```
+npm install
+cp .env.example .env # Input variables
+npm run dev
+```
 
 ## LINE account
 
@@ -17,15 +22,33 @@ You can use it on streaming platform(e.g. Twitch, Youtube...) by OBS.(If you don
   Make sure you already registered, if you need use LINE Bot.
 
 - Go to LINE Developer Console
-  - Close auto-reply setting on "Messaging API" Tab.
-  - Setup your basic account information. Here is some info you will need to know.
-    - Callback URL: `https://{YOUR_URL}/webhooks/line`
-    - Verify your webhook.
-    - Enable bot join group button.
-- You will get following info, need fill back to `.env` file.
-  - Channel Secret
-  - Channel Access Token (You need to issue one here)
 
+  - Close `auto-reply` setting on "Messaging API" Tab.
+  - Setup your basic account information. Here is some info you will need to know.
+
+    - Callback URL: `https://{YOUR_URL}/webhooks/line`
+    - Enable `Use webhook` checkbox.
+    - Verify your webhook.
+
+![](https://github.com/louis70109/Screen-LINE-Bullets/LINE-bot-step.jpg)
+
+- You will get following info, need to fill back in `.env` file at `chatbot` folder.
+
+  - `Channel Secret`
+  - `Channel Access Token` (You need to issue one here)
+
+# Frontend
+
+```
+npm install
+cp .env.example .env # Input variable
+npm run dev
+```
+
+## Notes
+
+- If `Localhost`, input `ws://localhost:3000` in `.env` variable.
+- Else if , input `wss://YOUR_DOMAIN`.
 
 # LICENSE
 
