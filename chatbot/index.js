@@ -70,7 +70,7 @@ wss.on('connection', (ws) => {
   const sendNowTime = setInterval(() => {
     ws.send(JSON.stringify({ text: BULLETS, avatar: USER_AVATAR }));
     BULLETS = '';
-    avatar = ''; // Refresh
+    USER_AVATAR = ''; // Refresh
   }, 2000);
 
   ws.on('message', (data) => ws.send(data));
