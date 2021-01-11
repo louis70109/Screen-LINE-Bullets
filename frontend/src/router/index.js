@@ -6,7 +6,7 @@ const router = createRouter({
   history: routerHistory,
   routes: [
     {
-      path: '/barrage',
+      path: '/',
       component: Barrage,
     },
   ],
