@@ -28,7 +28,7 @@ export default {
     });
     async function createText(text, avatar) {
       let div_text = document.createElement('div');
-      div_text.id = 'text' + 1;
+      div_text.id = 'text' + (count.value += 1);
       div_text.style.position = 'fixed';
       div_text.style.whiteSpace = 'nowrap';
 
