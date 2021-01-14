@@ -2,6 +2,8 @@
 
 You can use it on streaming platform(e.g. Twitch, Youtube...) by OBS.(If you don't know how to use, you could reference [the article](https://nijialin.com/2020/11/29/mac-stream-soundflower/)). It would be cool for your activities!
 
+![](https://nijialin.com/images/2021/bullets/bullets-sample1.gif)
+
 ## Developing
 
 You need to run `npm install` to import dependencies and run `npm run dev` to start servers both of **chatbot** and **frontend** folder.
