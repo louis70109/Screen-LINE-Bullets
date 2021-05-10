@@ -50,7 +50,7 @@ npm run dev
 ## Notes
 
 - If `Localhost`, input `ws://localhost:3000` in `.env` variable.
-- Else if , input `wss://YOUR_DOMAIN`.
+- Else input `wss://YOUR_DOMAIN`.
 
 # LICENSE
 
