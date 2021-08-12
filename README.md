@@ -10,7 +10,9 @@ You need to run `npm install` to import dependencies and run `npm run dev` to st
 
 Because LINE Chatbot need `SSL` certificate, so you can deploy `chatbot` code to **Heroku** or run [ngrok](https://ngrok.com/) to get a domain which is contain SSL.
 
-# Chatbot
+# Chatbot as Backend
+
+Run below commands:
 
 ```
 npm install
@@ -39,7 +41,7 @@ npm run dev
   - `Channel Secret`
   - `Channel Access Token` (You need to issue one here)
 
-# Frontend
+# Frontend as Screen Bullets
 
 ```
 npm install
@@ -54,4 +56,4 @@ npm run dev
 
 # LICENSE
 
-MIT
+[MIT](https://github.com/louis70109/Screen-LINE-Bullets/blob/master/LICENSE)
