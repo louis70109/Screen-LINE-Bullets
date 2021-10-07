@@ -51,8 +51,8 @@ npm run dev
 
 ## Notes
 
-- If `Localhost`, input `ws://localhost:3000` in `.env` variable.
-- Else input `wss://YOUR_DOMAIN`.
+- If your environment in `localhost`, input `ws://localhost:3000` in `.env` variable.
+- Production environment inputs `wss://YOUR_DOMAIN` in environment variable.
 
 # LICENSE
 
